@@ -32,7 +32,7 @@ exports.signup = function(req, res, next) {
           return next(err);
         }
 
-        res.json({success: 'true'});
+        res.json({token: tokenForUser(user)});
       });
     })
     .catch(err => next(err));
